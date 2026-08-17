@@ -3,7 +3,6 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,17 +16,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('', function () {
+Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Route::get('layout/app' , function(){
     return view('layout.app');
 });
 
-Route::get('/auth/register',[AuthController::class, 'registerForm'])->name('auth.registerform');
+
+
+Route::get('/register',[AuthController::class, 'registerForm'])->name('auth.registerform');
 Route::post('/register', [AuthController::class, 'register'])->name('register');
-Route::get('/auth/login', [AuthController::class, 'loginForm'])->name('auth.login');
+Route::get('/login', [AuthController::class, 'loginform'])->name('auth.loginform');
+Route::post('/login', [AuthController::class, 'login'])->name('login');
 
 // Route::get('category/index' , function(){
 //     return view('category.index');
@@ -61,5 +63,3 @@ Route::get('/product/{product}/edit',[ProductController::class, 'edit'])->name('
 Route::put('/product/{product}/update',[ProductController::class, 'update'])->name('product.update');
 Route::get('/product/{product}/destroy',[ProductController::class, 'destroy'])->name('product.destroy');
 
-Route::get('/user/index', [UserController::class, 'index'])->name('user.index');
-Route::get('/user/create', [UserController::class, 'create'])->name('user.create');

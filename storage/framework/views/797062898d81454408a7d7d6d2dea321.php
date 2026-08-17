@@ -7,7 +7,7 @@
     <title>Create Account</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body class="bg-light">
@@ -36,26 +36,18 @@
                                 <?php echo csrf_field(); ?>
                             <div class="mb-3">
                                 <label for="">Full name</label>
-                                <input type="text" class="form-control form-control-lg" name="name" placeholder="Full Name">
+                                <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Full Name">
                             </div>
 
                             <div class="mb-3">
                                 <label for="">Email Address🏡</label>
-                                <input type="email" class="form-control form-control-lg" name="email" placeholder="Email address">
+                                <input type="email" class="form-control form-control-lg" id="email" name="email" placeholder="name@example.com">
                             </div>
 
                             <div class="mb-3">
                                 <label for="">Password🔑</label>
-                                <input type="password" class="form-control form-control-lg" name="password" placeholder="New password">
+                                <input type="password" class="form-control form-control-lg" id="password" name="password" placeholder="New password">
                             </div>
-
-                            <div class="mb-3">
-                                <label for="">Confirm Password🔑</label>
-                                <input type="password" name="confirmpassword" class="form-control form-control-lg"
-                                    placeholder="Confirm password">
-                            </div>
-
-                           
 
                             <button type="submit" class="btn btn-success btn-lg w-100 fw-bold">
                                 Sign Up
@@ -66,7 +58,7 @@
                         <div class="text-center mt-3 flex ">
                             <p>Already have an account?
 
-                                <a href="<?php echo e(route('auth.login')); ?>" class="text-primary fw-semibold text-decoration-none">
+                                <a href="<?php echo e(route('auth.loginform')); ?>" class="text-primary fw-semibold text-decoration-none">
                                     Sigin
                                 </a>
                             </p> 

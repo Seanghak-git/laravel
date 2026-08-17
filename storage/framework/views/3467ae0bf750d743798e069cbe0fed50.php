@@ -26,8 +26,8 @@
                 <div class="card border-0 shadow-sm rounded-3">
                     <div class="card-body p-4">
 
-                        <form action="#" method="POST" class="needs-validation" novalidate>
-
+                        <form action="<?php echo e(route('auth.login')); ?>" method="POST" class="needs-validation" novalidate>
+                                <?php echo csrf_field(); ?>
                             <div class="mb-3">
                                 <label for="">User Name or Email</label>
                                 <input type="text" class="form-control form-control-lg"

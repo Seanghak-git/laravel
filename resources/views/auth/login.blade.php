@@ -26,17 +26,17 @@
                 <div class="card border-0 shadow-sm rounded-3">
                     <div class="card-body p-4">
 
-                        <form action="#" method="POST" class="needs-validation" novalidate>
-
+                        <form action="{{route('auth.login')}}" method="POST" class="needs-validation" novalidate>
+                                @csrf
                             <div class="mb-3">
                                 <label for="">User Name or Email</label>
-                                <input type="text" class="form-control form-control-lg"
+                                <input type="text" name="name" class="form-control form-control-lg"
                                     placeholder="Email or username">
                             </div>
 
                             <div class="mb-3">
                                 <label for="">Password</label>
-                                <input type="password" class="form-control form-control-lg" placeholder="Password">
+                                <input type="password" name="password" class="form-control form-control-lg" placeholder="Password">
                             </div>
 
                             <button type="submit" class="btn btn-primary btn-lg w-100 fw-bold">
@@ -44,7 +44,7 @@
                             </button>
 
                             <div class="text-center mt-3">
-                                <a href="#" class="text-primary text-decoration-none">
+                                <a href="" class="text-primary text-decoration-none">
                                     Forgot password?
                                 </a>
                             </div>
